@@ -30,6 +30,9 @@ player_position_y = HEIGHT /2
 enemy_position_x = 25
 enemy_position_y = 75
 
+BOX = Rect((400, 325), (100, 50))
+GREEN = 0, 100, 100
+
 def on_key_down(key):
     # move cirkel
     global keys_pressed
@@ -68,9 +71,12 @@ def draw():
     # Clear the screen first
     screen.clear()
 
+    
 
     # Set the background color to white
     screen.fill("brown")
+
+    
 
     # Draw a blue circle with a radius of 50 in the center of the screen
     screen.draw.filled_circle((player_position_x, player_position_y), 50, "darkgreen")
@@ -82,6 +88,8 @@ def draw():
 
     # Draw a blue circle with a radius of 50 in the center of the screen
     screen.draw.filled_circle((enemy_position_x, enemy_position_y), 50, "red")
+
+    screen.draw.filled_rect(BOX, GREEN)
 
 def enemy_move_delta(player_position_x, player_position_y):
     speed = 2
